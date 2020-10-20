@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net.Mime;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class Gold : MonoBehaviour
@@ -27,6 +23,5 @@ public class Gold : MonoBehaviour
     {
         this._gold = PlayerPrefs.GetInt("Gold", 0);
         UpdateGoldAmountLabel();
-        PlayerPrefs.SetInt("Gold", 0);
     }
 }

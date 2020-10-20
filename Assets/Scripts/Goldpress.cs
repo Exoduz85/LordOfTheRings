@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using TMPro;
-using Unity.Mathematics;
+﻿using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
-using Button = UnityEngine.UI.Button;
 
 public class Goldpress : MonoBehaviour
 {
@@ -15,7 +11,6 @@ public class Goldpress : MonoBehaviour
     private int _amountOfGoldPressers;
     public int pressTimer;
     private float timeBetweenPress;
-    private UnityEvent onPointEnter;
 
     public int AmountOfGoldPressers
     {
@@ -32,7 +27,6 @@ public class Goldpress : MonoBehaviour
         timeBetweenPress = pressTimer;
         UpdatePressAmountLabel();
         colors = goldPressButton.colors;
-        PlayerPrefs.SetInt("GoldPressers", 0);
     }
 
     void UpdatePressAmountLabel() {
