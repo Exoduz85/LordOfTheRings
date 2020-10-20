@@ -1,27 +1,31 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using UnityEngine;
 using TMPro;
+
 public class Gold : MonoBehaviour
 {
-    private TextMeshProUGUI goldAmountText;
-    private int gold;
-    public int GoldAmount {get => this.gold; set => this.gold += value; }
+    public TextMeshProUGUI goldAmountText;
+    private int _gold;
 
+    public int GoldAmount
+    {
+        get => PlayerPrefs.GetInt("Gold", 0);
+        set
+        {
+            this._gold += value;
+            PlayerPrefs.SetInt("Gold", _gold);
+            UpdateGoldAmountLabel();
+        }
+    }
+    void UpdateGoldAmountLabel() {
+        this.goldAmountText.text = this.GoldAmount.ToString("0 Gold");
+    }
     private void Start()
     {
-        this.gold = PlayerPrefs.GetInt("Gold", 0);
-        goldAmountText = GetComponent<TextMeshProUGUI>();
-    }
-
-    private void Update()
-    {
-        goldAmountText.text = GoldAmount.ToString();
-    }
-
-    private void OnDestroy()
-    {
-        PlayerPrefs.SetInt("Gold", gold);
+        this._gold = PlayerPrefs.GetInt("Gold", 0);
+        UpdateGoldAmountLabel();
     }
 }
