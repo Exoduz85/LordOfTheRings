@@ -6,7 +6,7 @@ using TMPro;
 public class Gold : MonoBehaviour
 {
     private TextMeshProUGUI goldAmountText;
-    private int gold;
+    private int gold = 0;
     public int GoldAmount {get => this.gold; set => this.gold += value; }
 
     private void Start()
