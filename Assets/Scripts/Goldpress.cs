@@ -17,7 +17,7 @@ public class Goldpress : MonoBehaviour
         get => PlayerPrefs.GetInt("GoldPressers", 0);
         set
         {
-            this._amountOfGoldPressers += value;
+            this._amountOfGoldPressers = value;
             PlayerPrefs.SetInt("GoldPressers", _amountOfGoldPressers);
             UpdatePressAmountLabel();
         }
