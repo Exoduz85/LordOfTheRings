@@ -27,5 +27,6 @@ public class Gold : MonoBehaviour
     {
         this._gold = PlayerPrefs.GetInt("Gold", 0);
         UpdateGoldAmountLabel();
+        PlayerPrefs.SetInt("Gold", 0);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -31,10 +32,12 @@ public class Goldpress : MonoBehaviour
         timeBetweenPress = pressTimer;
         UpdatePressAmountLabel();
         colors = goldPressButton.colors;
+        PlayerPrefs.SetInt("GoldPressers", 0);
     }
 
     void UpdatePressAmountLabel() {
         this.goldPressAmountText.text = this.AmountOfGoldPressers.ToString("0 gold pressers");
+        this._amountOfGoldPressers = AmountOfGoldPressers;
     }
     void Update()
     {
