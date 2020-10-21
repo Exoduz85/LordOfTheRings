@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class RingProductionUnitScript : MonoBehaviour {
     public RingProductionUnit ringProductionUnit;
-    public Text ringAmountText;
-    public Text purchaseButtonLabel;
+    public TextMeshProUGUI ringAmountText;
+    public TextMeshProUGUI purchaseButtonLabel;
     float elapsedTime;
 
     public void SetUp(RingProductionUnit ringProductionUnit) {
