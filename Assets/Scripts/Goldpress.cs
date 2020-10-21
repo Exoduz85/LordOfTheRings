@@ -9,8 +9,8 @@ public class Goldpress : MonoBehaviour
     private ColorBlock colors;
     private int goldPressWorth = 1;
     private int _amountOfGoldPressers;
-    public int pressTimer;
-    private float timeBetweenPress;
+    private float elapsedTime;
+    private float productionTime = 1f;
 
     public int AmountOfGoldPressers
     {
@@ -24,7 +24,6 @@ public class Goldpress : MonoBehaviour
     }
     private void Start()
     {
-        timeBetweenPress = pressTimer;
         UpdatePressAmountLabel();
         colors = goldPressButton.colors;
     }
@@ -42,14 +41,11 @@ public class Goldpress : MonoBehaviour
 
     private void TimeCounterAddGold()
     {
-        if (timeBetweenPress <= 0)
+        this.elapsedTime += Time.deltaTime;
+        if (this.elapsedTime >= this.productionTime)
         {
             GetComponent<Gold>().GoldAmount = goldPressWorth * _amountOfGoldPressers;
-            timeBetweenPress = pressTimer;
-        }
-        else
-        {
-            timeBetweenPress -= Time.deltaTime;
+            this.elapsedTime -= this.productionTime;
         }
     }
 
