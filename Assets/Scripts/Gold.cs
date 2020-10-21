@@ -17,7 +17,7 @@ public class Gold : MonoBehaviour
         }
     }
     void UpdateGoldAmountLabel() {
-        this.goldAmountText.text = this.GoldAmount.ToString("0 Gold");
+        this.goldAmountText.text = this.GoldAmount.ToString("Rings: 0");
     }
     private void Start()
     {

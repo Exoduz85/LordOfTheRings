@@ -30,13 +30,14 @@ public class Goldpress : MonoBehaviour
     }
 
     void UpdatePressAmountLabel() {
-        this.goldPressAmountText.text = this.AmountOfGoldPressers.ToString("0 gold pressers");
+        this.goldPressAmountText.text = this.AmountOfGoldPressers.ToString("Ringpresser: 0");
         this._amountOfGoldPressers = AmountOfGoldPressers;
     }
     void Update()
     {
         goldPressButton.colors = colors;
         TimeCounterAddGold();
+        ChangeColorStateButton();
     }
 
     private void TimeCounterAddGold()
