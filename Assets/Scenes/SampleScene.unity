@@ -390,19 +390,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 597591777}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 612896437}
-        m_TargetAssemblyTypeName: Goldpress, Assembly-CSharp
-        m_MethodName: BuyGoldPresser
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &597591777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,19 +445,7 @@ MonoBehaviour:
   - eventID: 0
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 612896437}
-          m_TargetAssemblyTypeName: Goldpress, Assembly-CSharp
-          m_MethodName: ChangeColorStateButton
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!1 &612896435
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,9 +456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 612896436}
   - component: {fileID: 612896439}
-  - component: {fileID: 612896438}
-  - component: {fileID: 612896437}
-  - component: {fileID: 612896440}
+  - component: {fileID: 612896442}
   m_Layer: 5
   m_Name: GameManager
   m_TagString: Untagged
@@ -509,33 +483,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &612896437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612896435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b382cd9fdd024018baf27334aa87b51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goldPressAmountText: {fileID: 999926155}
-  goldPressButton: {fileID: 597591776}
---- !u!114 &612896438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612896435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a525e38ccaefb4223afaa846a67d3f1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  addedGold: 5
 --- !u!114 &612896439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,8 +495,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0a2605a03c04e5585d24587db2c969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldAmountPerClick: 5
   goldAmountText: {fileID: 863205238}
---- !u!114 &612896440
+--- !u!114 &612896442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -558,14 +506,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 612896435}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44a1ae4462ef74e15960324a97024bf4, type: 3}
+  m_Script: {fileID: 11500000, guid: 21f26515aa534bab88f61395ce145e6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldPresser:
-    name: 
-    cost: 0
-    productionTime: 0
-    productionAmount: 0
+  button: {fileID: 0}
+  colors:
+    m_NormalColor: {r: 1, g: 1, b: 0, a: 0.39607844}
+    m_HighlightedColor: {r: 0.9960785, g: 1, b: 0, a: 0.54901963}
+    m_PressedColor: {r: 0.9960785, g: 1, b: 0, a: 1}
+    m_SelectedColor: {r: 0.9960785, g: 1, b: 0, a: 0}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
 --- !u!1 &863205235
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,7 +680,7 @@ GameObject:
   - component: {fileID: 999926155}
   - component: {fileID: 999926154}
   m_Layer: 5
-  m_Name: GoldPressAmount
+  m_Name: RingPressAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -987,7 +939,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Buy Ringpresser
+  m_text: text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
