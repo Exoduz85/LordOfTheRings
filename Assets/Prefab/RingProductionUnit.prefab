@@ -179,7 +179,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 69.2
   m_fontSizeBase: 56.16
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 18.667725, y: 0.88409424, z: 19.301147, w: 2.2648315}
+  m_margin: {x: 22.186462, y: 9.429565, z: 22.31726, w: 9.805023}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

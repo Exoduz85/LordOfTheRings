@@ -258,8 +258,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -155.276}
-  m_SizeDelta: {x: 500, y: -310.552}
+  m_AnchoredPosition: {x: 0, y: -91}
+  m_SizeDelta: {x: 500, y: -181.95416}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &403762282
 MonoBehaviour:
@@ -274,25 +274,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ringProductionUnits:
-  - name: Ring Scavenger
+  - name: Brodo Faggins
     productionAmount: 1
     costs: 50
     productionTime: 1
-  - name: Ring Hunter
+  - name: Legolost my Arrows
     productionAmount: 5
     costs: 250
     productionTime: 1
-  - name: Ring Creator
+  - name: Gaydalf the Pink
     productionAmount: 10
     costs: 500
     productionTime: 1
-  - name: Ring Hoarder
+  - name: Bored of Mir
     productionAmount: 100
     costs: 5000
     productionTime: 1
-  - name: Ring Factory
+  - name: Dildo Bagger
     productionAmount: 1000
     costs: 50000
+    productionTime: 1
+  - name: Bored of the Rings
+    productionAmount: 5000
+    costs: 250000
     productionTime: 1
   ringProductionUnitParent: {fileID: 403762281}
   ringProductionUnitPrefab: {fileID: 5178147295215487915, guid: e32e7f7a6daef435ebb569490f5e4956, type: 3}
@@ -313,8 +317,8 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 3
-  m_Spacing: 75
+  m_ChildAlignment: 0
+  m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -415,7 +419,6 @@ GameObject:
   m_Component:
   - component: {fileID: 612896436}
   - component: {fileID: 612896439}
-  - component: {fileID: 612896442}
   m_Layer: 5
   m_Name: GameManager
   m_TagString: Untagged
@@ -456,27 +459,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldAmountPerClick: 5
   goldAmountText: {fileID: 863205238}
---- !u!114 &612896442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612896435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21f26515aa534bab88f61395ce145e6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 0}
-  colors:
-    m_NormalColor: {r: 1, g: 1, b: 0, a: 0.39607844}
-    m_HighlightedColor: {r: 0.9960785, g: 1, b: 0, a: 0.54901963}
-    m_PressedColor: {r: 0.9960785, g: 1, b: 0, a: 1}
-    m_SelectedColor: {r: 0.9960785, g: 1, b: 0, a: 0}
-    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
 --- !u!1 &863205235
 GameObject:
   m_ObjectHideFlags: 0
