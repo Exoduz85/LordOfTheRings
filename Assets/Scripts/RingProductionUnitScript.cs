@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class RingProductionUnitScript : MonoBehaviour {
     public RingProductionUnit ringProductionUnit;
     public TextMeshProUGUI ringAmountText;
     public TextMeshProUGUI purchaseButtonLabel;
+    public Button button;
+    public ColorBlock colors;
     float elapsedTime;
 
     public void SetUp(RingProductionUnit ringProductionUnit) {
@@ -13,7 +16,7 @@ public class RingProductionUnitScript : MonoBehaviour {
         this.purchaseButtonLabel.text = $"Purchase {ringProductionUnit.name}";
     }
 	
-    public int RingPressAmount {
+    public int RingMakerAmount {
         get => PlayerPrefs.GetInt(this.ringProductionUnit.name, 0);
         set {
             PlayerPrefs.SetInt(this.ringProductionUnit.name, value);
@@ -22,11 +25,12 @@ public class RingProductionUnitScript : MonoBehaviour {
     }
 
     void UpdateRingPressAmountLabel() {
-        this.ringAmountText.text = this.RingPressAmount.ToString($"0 {this.ringProductionUnit.name}");
+        this.ringAmountText.text = this.RingMakerAmount.ToString($"0 {this.ringProductionUnit.name}");
     }
 
     void Start() {
         UpdateRingPressAmountLabel();
+        colors = new ColorBlock();
     }
 	
     void Update() {
@@ -35,6 +39,7 @@ public class RingProductionUnitScript : MonoBehaviour {
             ProduceRing();
             this.elapsedTime -= this.ringProductionUnit.productionTime; // DO NOT SET TO ZERO HERE
         }
+        ChangeColorStateButton();
     }
     // something costs 100ct, and I get 40ct per day:
     // IN CASE WE SET IT TO ZERO:
@@ -44,14 +49,21 @@ public class RingProductionUnitScript : MonoBehaviour {
 
     void ProduceRing() {
         var ring = FindObjectOfType<Ring>();
-        ring.RingAmount += this.ringProductionUnit.productionAmount * this.RingPressAmount;
+        ring.RingAmount += this.ringProductionUnit.productionAmount * this.RingMakerAmount;
     }
 
-    public void BuyGoldPress() {
+    public void BuyRingProductionUnit() {
         var ring = FindObjectOfType<Ring>();
         if (ring.RingAmount >= this.ringProductionUnit.costs) {
             ring.RingAmount -= this.ringProductionUnit.costs;
-            this.RingPressAmount += 1;
+            this.RingMakerAmount += 1;
         }
+    }
+    public void ChangeColorStateButton()
+    {
+        var ring = FindObjectOfType<Ring>();
+        colors = button.colors;
+        colors.highlightedColor = ring.RingAmount >= this.ringProductionUnit.costs ? Color.green : Color.red;
+        button.colors = colors;
     }
 }
