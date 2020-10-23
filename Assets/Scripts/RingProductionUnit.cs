@@ -7,6 +7,6 @@ public class RingProductionUnit
 {
     public string name = "RingProductionUnitScript";
     public int productionAmount = 1;
-    public int costs = 100;
+    public float costs = 100;
     public float productionTime = 1f;
 }

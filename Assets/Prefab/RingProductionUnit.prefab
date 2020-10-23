@@ -58,6 +58,7 @@ MonoBehaviour:
     productionTime: 1
   ringAmountText: {fileID: 5180056799572289166}
   purchaseButtonLabel: {fileID: 5180056798938821860}
+  floatingEarningsPrefab: {fileID: 7349213653274294382, guid: 071bd30917a614da696be4259f600ed5, type: 3}
   button: {fileID: 5180056799706696165}
   colors:
     m_NormalColor: {r: 1, g: 1, b: 0, a: 0.39607844}

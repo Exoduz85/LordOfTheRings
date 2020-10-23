@@ -274,30 +274,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ringProductionUnits:
-  - name: Brodo Faggins
+  - name: Hobbit Farm
     productionAmount: 1
     costs: 50
     productionTime: 1
-  - name: Legolost my Arrows
+  - name: Dwarf Farm
     productionAmount: 5
     costs: 250
-    productionTime: 1
-  - name: Gaydalf the Pink
+    productionTime: 1.5
+  - name: Elven Farm
     productionAmount: 10
     costs: 500
-    productionTime: 1
-  - name: Bored of Mir
+    productionTime: 2
+  - name: Ent Farm
     productionAmount: 100
     costs: 5000
-    productionTime: 1
-  - name: Dildo Bagger
+    productionTime: 2.5
+  - name: Wizard Farm
     productionAmount: 1000
     costs: 50000
-    productionTime: 1
-  - name: Bored of the Rings
+    productionTime: 3
+  - name: The One Ring
     productionAmount: 5000
     costs: 250000
-    productionTime: 1
+    productionTime: 5
   ringProductionUnitParent: {fileID: 403762281}
   ringProductionUnitPrefab: {fileID: 5178147295215487915, guid: e32e7f7a6daef435ebb569490f5e4956, type: 3}
 --- !u!114 &403762283

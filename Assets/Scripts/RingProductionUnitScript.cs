@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.Mathematics;
 
 public class RingProductionUnitScript : MonoBehaviour {
     public RingProductionUnit ringProductionUnit;
     public TextMeshProUGUI ringAmountText;
     public TextMeshProUGUI purchaseButtonLabel;
+    public TextMeshProUGUI floatingEarningsPrefab;
     public Button button;
     public ColorBlock colors;
     float elapsedTime;
@@ -13,7 +15,7 @@ public class RingProductionUnitScript : MonoBehaviour {
     public void SetUp(RingProductionUnit ringProductionUnit) {
         this.ringProductionUnit = ringProductionUnit;
         this.gameObject.name = ringProductionUnit.name;
-        this.purchaseButtonLabel.text = $"Purchase {ringProductionUnit.name}";
+        this.purchaseButtonLabel.text = $"Purchase {ringProductionUnit.name} for {ringProductionUnit.costs} rings.";
     }
 	
     public int RingMakerAmount {
@@ -37,26 +39,28 @@ public class RingProductionUnitScript : MonoBehaviour {
         this.elapsedTime += Time.deltaTime;
         if (this.elapsedTime >= this.ringProductionUnit.productionTime) {
             ProduceRing();
-            this.elapsedTime -= this.ringProductionUnit.productionTime; // DO NOT SET TO ZERO HERE
+            FloatingEarnText();
+            this.elapsedTime -= this.ringProductionUnit.productionTime;
         }
         ChangeColorStateButton();
     }
-    // something costs 100ct, and I get 40ct per day:
-    // IN CASE WE SET IT TO ZERO:
-    // 40ct 80ct [120ct (Buy for 100ct) 0ct] 40ct 80ct // In 5 Days, I can buy something for 100ct once, and I have 80ct
-    // IN CASE WE DECREASE IT BY THE COSTS:
-    // 40ct 80ct [120ct (Buy for 100ct) 20ct] 60ct [100ct (Buy for 100ct) 0ct] // In 5 Days, I can buy something for 100ct twice
-
     void ProduceRing() {
         var ring = FindObjectOfType<Ring>();
         ring.RingAmount += this.ringProductionUnit.productionAmount * this.RingMakerAmount;
+        
     }
-
+    void FloatingEarnText()
+    {
+        floatingEarningsPrefab.text = (this.ringProductionUnit.productionAmount * this.RingMakerAmount).ToString();
+        var earnTextInstance = Instantiate(floatingEarningsPrefab, this.transform.position, quaternion.identity);
+        earnTextInstance.transform.SetParent(this.transform);
+    }
     public void BuyRingProductionUnit() {
         var ring = FindObjectOfType<Ring>();
         if (ring.RingAmount >= this.ringProductionUnit.costs) {
-            ring.RingAmount -= this.ringProductionUnit.costs;
+            ring.RingAmount -= (int)this.ringProductionUnit.costs;
             this.RingMakerAmount += 1;
+            ringProductionUnit.costs *= 1.07f;
         }
     }
     public void ChangeColorStateButton()
