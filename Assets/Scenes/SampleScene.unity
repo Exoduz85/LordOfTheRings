@@ -275,26 +275,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ringProductionUnits:
   - name: Hobbit Farm
+    costKey: HobbitCost
     productionAmount: 1
     costs: 50
     productionTime: 1
   - name: Dwarf Farm
+    costKey: DwarfCost
     productionAmount: 5
     costs: 250
     productionTime: 1.5
   - name: Elven Farm
+    costKey: ElvenCost
     productionAmount: 10
     costs: 500
     productionTime: 2
   - name: Ent Farm
+    costKey: EntCost
     productionAmount: 100
     costs: 5000
     productionTime: 2.5
   - name: Wizard Farm
+    costKey: WizardCost
     productionAmount: 1000
     costs: 50000
     productionTime: 3
   - name: The One Ring
+    costKey: OneRingCost
     productionAmount: 5000
     costs: 250000
     productionTime: 5

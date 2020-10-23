@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.Mathematics;
@@ -15,22 +16,26 @@ public class RingProductionUnitScript : MonoBehaviour {
     public void SetUp(RingProductionUnit ringProductionUnit) {
         this.ringProductionUnit = ringProductionUnit;
         this.gameObject.name = ringProductionUnit.name;
-        this.purchaseButtonLabel.text = $"Purchase {ringProductionUnit.name} for {ringProductionUnit.costs} rings.";
+        this.purchaseButtonLabel.text = $"Purchase {ringProductionUnit.name} for {(int)this.ringProductionUnit.costs} rings.";
     }
-	
     public int RingMakerAmount {
-        get => PlayerPrefs.GetInt(this.ringProductionUnit.name, 0);
+        get => PlayerPrefs.GetInt(this.ringProductionUnit.name, 0); // recommend not to use same key for float/int etc
         set {
             PlayerPrefs.SetInt(this.ringProductionUnit.name, value);
             UpdateRingPressAmountLabel();
         }
     }
-
     void UpdateRingPressAmountLabel() {
         this.ringAmountText.text = this.RingMakerAmount.ToString($"0 {this.ringProductionUnit.name}");
     }
+    void UpdateCostAmountLabel() {
+        this.purchaseButtonLabel.text = $"Purchase {ringProductionUnit.name} for {(int)this.ringProductionUnit.costs} rings.";
+    }
 
-    void Start() {
+    void Start()
+    {
+        this.ringProductionUnit.costs = PlayerPrefs.GetFloat(this.ringProductionUnit.costKey, this.ringProductionUnit.costs);
+        UpdateCostAmountLabel();
         UpdateRingPressAmountLabel();
         colors = new ColorBlock();
     }
@@ -38,14 +43,12 @@ public class RingProductionUnitScript : MonoBehaviour {
     void Update() {
         this.elapsedTime += Time.deltaTime;
         if (this.elapsedTime >= this.ringProductionUnit.productionTime) {
-            if (this.RingMakerAmount != 0)
-            {
+            if (this.RingMakerAmount != 0) {
                 ProduceRing();
                 FloatingEarnText();
-                this.elapsedTime -= this.ringProductionUnit.productionTime;
             }
+            this.elapsedTime -= this.ringProductionUnit.productionTime;
         }
-        
         ChangeColorStateButton();
     }
     void ProduceRing() {
@@ -53,26 +56,36 @@ public class RingProductionUnitScript : MonoBehaviour {
         ring.RingAmount += this.ringProductionUnit.productionAmount * this.RingMakerAmount;
         
     }
-    void FloatingEarnText()
-    {
+    void FloatingEarnText() {
         floatingEarningsPrefab.text = (this.ringProductionUnit.productionAmount * this.RingMakerAmount).ToString();
         var earnTextInstance = Instantiate(floatingEarningsPrefab, this.transform.position, quaternion.identity);
         earnTextInstance.transform.SetParent(this.transform);
     }
     public void BuyRingProductionUnit() {
         var ring = FindObjectOfType<Ring>();
-        if (ring.RingAmount >= this.ringProductionUnit.costs) {
+        if (ring.RingAmount >= (int)this.ringProductionUnit.costs) {
             ring.RingAmount -= (int)this.ringProductionUnit.costs;
             this.RingMakerAmount += 1;
-            ringProductionUnit.costs *= 1.07f;
-            this.purchaseButtonLabel.text = $"Purchase {ringProductionUnit.name} for " + ringProductionUnit.costs.ToString("0") + " rings.";
+            this.ringProductionUnit.costs *= 1.07f;
+            PlayerPrefs.SetFloat(this.ringProductionUnit.costKey, this.ringProductionUnit.costs);
+            UpdateCostAmountLabel();
         }
     }
-    public void ChangeColorStateButton()
-    {
+    public void ChangeColorStateButton() {
         var ring = FindObjectOfType<Ring>();
         colors = button.colors;
         colors.highlightedColor = ring.RingAmount >= this.ringProductionUnit.costs ? Color.green : Color.red;
         button.colors = colors;
     }
+    /*public void UpdatePlayerPrefsCostForThisUnit()
+    {
+        foreach (var unit in GetComponent<RingProductionUnits>().ringProductionUnits) //this returns null reference...?
+        {
+            if (unit.name == this.ringProductionUnit.name)
+            {
+                Debug.Log(this.ringProductionUnit.name);
+                PlayerPrefs.SetFloat(this.ringProductionUnit.name, this.ringProductionUnit.costs);
+            }
+        }
+    }*/
 }
