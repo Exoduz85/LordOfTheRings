@@ -38,10 +38,14 @@ public class RingProductionUnitScript : MonoBehaviour {
     void Update() {
         this.elapsedTime += Time.deltaTime;
         if (this.elapsedTime >= this.ringProductionUnit.productionTime) {
-            ProduceRing();
-            FloatingEarnText();
-            this.elapsedTime -= this.ringProductionUnit.productionTime;
+            if (this.RingMakerAmount != 0)
+            {
+                ProduceRing();
+                FloatingEarnText();
+                this.elapsedTime -= this.ringProductionUnit.productionTime;
+            }
         }
+        
         ChangeColorStateButton();
     }
     void ProduceRing() {
@@ -61,6 +65,7 @@ public class RingProductionUnitScript : MonoBehaviour {
             ring.RingAmount -= (int)this.ringProductionUnit.costs;
             this.RingMakerAmount += 1;
             ringProductionUnit.costs *= 1.07f;
+            this.purchaseButtonLabel.text = $"Purchase {ringProductionUnit.name} for " + ringProductionUnit.costs.ToString("0") + " rings.";
         }
     }
     public void ChangeColorStateButton()

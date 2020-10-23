@@ -8,7 +8,7 @@ public class FloatingTextScript : MonoBehaviour
     void Update()
     {
         float moveYSpeed = 100f;
-        float moveXSpeed = 200f;
+        float moveXSpeed = 100f;
         float increaseScale = 1f;
         float decreaseScale = 1f;
         if (lifeTimer > lifeTimerMax * .75f)
@@ -23,12 +23,12 @@ public class FloatingTextScript : MonoBehaviour
         }
         else if (lifeTimer > lifeTimerMax * .25f)
         {
-            transform.position += new Vector3(moveXSpeed, moveYSpeed) * Time.deltaTime;
+            transform.position += new Vector3(moveXSpeed * 3, moveYSpeed) * Time.deltaTime;
             transform.localScale -= Vector3.one * (decreaseScale * Time.deltaTime);
         }
         else
         {
-            transform.position += new Vector3(-moveXSpeed * 2, moveYSpeed) * Time.deltaTime;
+            transform.position += new Vector3(-moveXSpeed * 4, moveYSpeed) * Time.deltaTime;
             transform.localScale -= Vector3.one * (decreaseScale * Time.deltaTime);
         }
         if (lifeTimer <= 0)
