@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [System.Serializable]
-public class RingProductionUnit
+[CreateAssetMenu]
+public class RingProductionData : ScriptableObject
 {
     public string name = "RingProductionUnitScript";
     public string costKey = "costKey";

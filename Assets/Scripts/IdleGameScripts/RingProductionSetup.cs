@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 
-public class RingProductionUnits : MonoBehaviour {
+public class RingProductionSetup : MonoBehaviour {
 
-    public RingProductionUnit[] ringProductionUnits;
+    public RingProductionData[] ringProductionUnits;
     public Transform ringProductionUnitParent;
     public GameObject ringProductionUnitPrefab;
 
     void Start() {
         foreach (var productionUnit in this.ringProductionUnits) {
             var instance = Instantiate(this.ringProductionUnitPrefab, this.ringProductionUnitParent);
-            instance.GetComponent<RingProductionUnitScript>().SetUp(productionUnit);
+            instance.GetComponent<RingProducer>().SetUp(productionUnit);
         }
     }
 }

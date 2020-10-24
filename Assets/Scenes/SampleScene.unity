@@ -216,6 +216,7 @@ RectTransform:
   - {fileID: 863205236}
   - {fileID: 612896436}
   - {fileID: 403762281}
+  - {fileID: 663759107}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -274,36 +275,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ringProductionUnits:
-  - name: Hobbit Farm
-    costKey: HobbitCost
-    productionAmount: 1
-    costs: 50
-    productionTime: 1
-  - name: Dwarf Farm
-    costKey: DwarfCost
-    productionAmount: 5
-    costs: 250
-    productionTime: 1.5
-  - name: Elven Farm
-    costKey: ElvenCost
-    productionAmount: 10
-    costs: 500
-    productionTime: 2
-  - name: Ent Farm
-    costKey: EntCost
-    productionAmount: 100
-    costs: 5000
-    productionTime: 2.5
-  - name: Wizard Farm
-    costKey: WizardCost
-    productionAmount: 1000
-    costs: 50000
-    productionTime: 3
-  - name: The One Ring
-    costKey: OneRingCost
-    productionAmount: 5000
-    costs: 250000
-    productionTime: 5
+  - {fileID: 11400000, guid: 494699aea7f094d6aba275fce6574f52, type: 2}
+  - {fileID: 11400000, guid: 99c724b03e8854dfd849289dd77c6fed, type: 2}
+  - {fileID: 11400000, guid: 8fd0bd79cc296450cb0056840589793d, type: 2}
+  - {fileID: 11400000, guid: 1f7ea1578f6bf4d818235acb630c1e89, type: 2}
+  - {fileID: 11400000, guid: 7719943dd7dc345e28795ad8fa73d826, type: 2}
+  - {fileID: 11400000, guid: c4c101f5b71b24465807f671a83a23a6, type: 2}
   ringProductionUnitParent: {fileID: 403762281}
   ringProductionUnitPrefab: {fileID: 5178147295215487915, guid: e32e7f7a6daef435ebb569490f5e4956, type: 3}
 --- !u!114 &403762283
@@ -463,8 +440,125 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0a2605a03c04e5585d24587db2c969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldAmountPerClick: 5
+  ringAmountPerClick: 5
   goldAmountText: {fileID: 863205238}
+--- !u!1 &663759106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 663759107}
+  - component: {fileID: 663759110}
+  - component: {fileID: 663759109}
+  - component: {fileID: 663759108}
+  m_Layer: 5
+  m_Name: ProduceGoldArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &663759107
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663759106}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 144383687}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 250.01, y: -0.003479}
+  m_SizeDelta: {x: 1419.9794, y: 1080.0388}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &663759108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663759106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fca567dbbe0d498f860a6feaf431f99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &663759109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663759106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 663759108}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 612896439}
+        m_TargetAssemblyTypeName: Ring, Assembly-CSharp
+        m_MethodName: ProduceGold
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!222 &663759110
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663759106}
+  m_CullTransparentMesh: 0
 --- !u!1 &863205235
 GameObject:
   m_ObjectHideFlags: 0

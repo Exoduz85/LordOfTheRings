@@ -1,11 +1,10 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.Mathematics;
 
-public class RingProductionUnitScript : MonoBehaviour {
-    public RingProductionUnit ringProductionUnit;
+public class RingProducer : MonoBehaviour {
+    public RingProductionData ringProductionUnit;
     public TextMeshProUGUI ringAmountText;
     public TextMeshProUGUI purchaseButtonLabel;
     public TextMeshProUGUI floatingEarningsPrefab;
@@ -13,7 +12,7 @@ public class RingProductionUnitScript : MonoBehaviour {
     public ColorBlock colors;
     float elapsedTime;
 
-    public void SetUp(RingProductionUnit ringProductionUnit) {
+    public void SetUp(RingProductionData ringProductionUnit) {
         this.ringProductionUnit = ringProductionUnit;
         this.gameObject.name = ringProductionUnit.name;
         this.purchaseButtonLabel.text = $"Purchase {ringProductionUnit.name} for {(int)this.ringProductionUnit.costs} rings.";
