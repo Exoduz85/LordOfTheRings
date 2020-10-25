@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Unit : MonoBehaviour {
     public float attackTime = 0.6f;
     public float damage = 5f;
     public float health = 100f;
+    public Text floatingDamageText;
     float elapsedTime;
 
     GameObject Target => GetComponent<Target>().value;
@@ -26,6 +28,7 @@ public class Unit : MonoBehaviour {
     void Attack() {
         var unit = this.Target.GetComponent<Unit>();
         unit.TakeDamage(this.damage);
+        InstanciateDamagePopUpText();
         Debug.Log($"{this} attacks {this.Target} for {this.damage} damage!", this);
         this.elapsedTime -= this.attackTime;
     }
@@ -35,5 +38,11 @@ public class Unit : MonoBehaviour {
         if (this.IsDead) {
             Destroy(this.gameObject);
         }
+    }
+
+    void InstanciateDamagePopUpText()
+    {
+        var damageTextInstance = Instantiate(floatingDamageText, this.Target.transform.position, Quaternion.identity);
+        damageTextInstance.transform.SetParent(this.transform);
     }
 }

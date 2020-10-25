@@ -1,13 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Net.Mime;
+using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using Unity.Mathematics;
 
 public class RingProducer : MonoBehaviour {
     public RingProductionData ringProductionUnit;
-    public TextMeshProUGUI ringAmountText;
-    public TextMeshProUGUI purchaseButtonLabel;
-    public TextMeshProUGUI floatingEarningsPrefab;
+    public Text ringAmountText;
+    public Text purchaseButtonLabel;
+    public Text floatingEarningsPrefab;
     public Button button;
     public ColorBlock colors;
     float elapsedTime;
@@ -76,15 +76,4 @@ public class RingProducer : MonoBehaviour {
         colors.highlightedColor = ring.RingAmount >= this.ringProductionUnit.costs ? Color.green : Color.red;
         button.colors = colors;
     }
-    /*public void UpdatePlayerPrefsCostForThisUnit()
-    {
-        foreach (var unit in GetComponent<RingProductionUnits>().ringProductionUnits) //this returns null reference...?
-        {
-            if (unit.name == this.ringProductionUnit.name)
-            {
-                Debug.Log(this.ringProductionUnit.name);
-                PlayerPrefs.SetFloat(this.ringProductionUnit.name, this.ringProductionUnit.costs);
-            }
-        }
-    }*/
 }

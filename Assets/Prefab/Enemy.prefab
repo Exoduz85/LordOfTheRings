@@ -52,6 +52,7 @@ MonoBehaviour:
   attackTime: 1.2
   damage: 3
   health: 40
+  floatingDamageText: {fileID: -5823235796868158255, guid: e6aef731542d54622a1b42aba507b66c, type: 3}
 --- !u!114 &885242949625603921
 MonoBehaviour:
   m_ObjectHideFlags: 0

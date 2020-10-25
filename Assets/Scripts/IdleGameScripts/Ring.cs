@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class Ring : MonoBehaviour
 {
     public int ringAmountPerClick = 5;
-    public TextMeshProUGUI goldAmountText;
+    public Text ringAmountText;
     public int RingAmount {
         get => PlayerPrefs.GetInt("Rings", 1);
         set {
@@ -14,7 +14,7 @@ public class Ring : MonoBehaviour
     }
 
     void UpdateGoldAmountLabel() {
-        this.goldAmountText.text = this.RingAmount.ToString("0 Rings");
+        this.ringAmountText.text = this.RingAmount.ToString("0 Rings");
     }
 
     void Start() {
