@@ -7,6 +7,7 @@ public class Unit : MonoBehaviour {
     public float damage = 5f;
     public float health = 100f;
     public float maxHealth = 100f;
+    public int objectValue;
     public Text floatingDamageText;
     public HealthBarScript healthBar;
     float elapsedTime;
@@ -37,7 +38,7 @@ public class Unit : MonoBehaviour {
     void Attack() {
         var unit = this.Target.GetComponent<Unit>();
         unit.TakeDamage(this.damage);
-        InstanciateDamagePopUpText();
+        InstantiateDamagePopUpText();
         Debug.Log($"{this} attacks {this.Target} for {this.damage} damage!", this);
         this.elapsedTime -= this.attackTime;
     }
@@ -49,9 +50,7 @@ public class Unit : MonoBehaviour {
             Destroy(this.gameObject);
         }
     }
-
-    void InstanciateDamagePopUpText()
-    {
+    void InstantiateDamagePopUpText() {
         var damageTextInstance = Instantiate(floatingDamageText, this.Target.transform.position, Quaternion.identity);
         damageTextInstance.transform.SetParent(this.transform);
     }

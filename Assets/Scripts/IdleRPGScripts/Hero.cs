@@ -17,6 +17,7 @@ public class Hero : MonoBehaviour {
         GetComponent<Unit>().health *= 1.1f;
         GetComponent<Unit>().maxHealth *= 1.1f;
         healthBar.slider.maxValue = GetComponent<Unit>().maxHealth;
+        healthBar.fill.color = healthBar.gradient.Evaluate(healthBar.slider.normalizedValue);
     }
 }
 

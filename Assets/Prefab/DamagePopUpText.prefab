@@ -74,11 +74,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTimer: 1
-  lifeTimerMax: 0.3
+  lifeTimerMax: 0.2
   firstHalfMoveVector: {x: 50, y: 500, z: 0}
   secondHalfMoveVector: {x: -100, y: -600, z: 0}
   movePosMultiplier: 3
-  increaseScale: 1.5
+  increaseScale: 2
   decreaseScale: -10
   t: 0
 --- !u!114 &-5823235796868158255
@@ -103,10 +103,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 72
+    m_FontSize: 30
     m_FontStyle: 3
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 90
     m_Alignment: 0
     m_AlignByGeometry: 0

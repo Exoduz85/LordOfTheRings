@@ -7,4 +7,5 @@ public class Target : MonoBehaviour {
         if(!this.Exists)
             Destroy(this);
     }
+    
 }
