@@ -251,7 +251,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 57.80211
+  orthographic size: 700
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -364,12 +364,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 687061759}
-        m_TargetAssemblyTypeName: Hero, Assembly-CSharp
-        m_MethodName: UpgradeHealth
-        m_Mode: 1
+        m_TargetAssemblyTypeName: Hero
+        m_MethodName: 
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -529,7 +529,6 @@ RectTransform:
   - {fileID: 1512267932}
   - {fileID: 822047745}
   - {fileID: 352051401}
-  - {fileID: 1260491126}
   - {fileID: 1590580742}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -546,22 +545,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 825913890}
     m_Modifications:
-    - target: {fileID: 2363469311540219389, guid: 8fc837ef215cc4d2dac614f66fe9df98, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2363469311540219389, guid: 8fc837ef215cc4d2dac614f66fe9df98, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2363469311540219389, guid: 8fc837ef215cc4d2dac614f66fe9df98, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2363469311540219389, guid: 8fc837ef215cc4d2dac614f66fe9df98, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3541914645052499282, guid: 8fc837ef215cc4d2dac614f66fe9df98, type: 3}
       propertyPath: m_Name
       value: Hero
@@ -651,17 +634,17 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3541914645052499285, guid: 8fc837ef215cc4d2dac614f66fe9df98, type: 3}
-      propertyPath: objectValue
-      value: 1
+      propertyPath: goldSpawner
+      value: 
+      objectReference: {fileID: 4224606064843354347, guid: de19c53e2261a47fcadbfa68e921c6d9, type: 3}
+    - target: {fileID: 3541914645052499285, guid: 8fc837ef215cc4d2dac614f66fe9df98, type: 3}
+      propertyPath: coinsScript
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3541914645052499285, guid: 8fc837ef215cc4d2dac614f66fe9df98, type: 3}
-      propertyPath: coinPrefab
+      propertyPath: coin
       value: 
       objectReference: {fileID: 4665292367290822, guid: 521123556861a4b5985e679b6ce6893e, type: 3}
-    - target: {fileID: 3541914645052499285, guid: 8fc837ef215cc4d2dac614f66fe9df98, type: 3}
-      propertyPath: instantiateCoins
-      value: 
-      objectReference: {fileID: 1260491127}
     - target: {fileID: 7907441042974176637, guid: 8fc837ef215cc4d2dac614f66fe9df98, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -687,6 +670,14 @@ PrefabInstance:
       propertyPath: coinPrefab
       value: 
       objectReference: {fileID: 4665292367290822, guid: 521123556861a4b5985e679b6ce6893e, type: 3}
+    - target: {fileID: 885242949625603918, guid: 59683d13862084714a12d3c75f03518f, type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 4665292367290822, guid: 521123556861a4b5985e679b6ce6893e, type: 3}
+    - target: {fileID: 885242949625603918, guid: 59683d13862084714a12d3c75f03518f, type: 3}
+      propertyPath: goldSpawner
+      value: 
+      objectReference: {fileID: 4224606064843354347, guid: de19c53e2261a47fcadbfa68e921c6d9, type: 3}
     - target: {fileID: 885242949625603920, guid: 59683d13862084714a12d3c75f03518f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -800,6 +791,14 @@ PrefabInstance:
       propertyPath: coinPrefab
       value: 
       objectReference: {fileID: 4665292367290822, guid: 521123556861a4b5985e679b6ce6893e, type: 3}
+    - target: {fileID: 885242949625603918, guid: 59683d13862084714a12d3c75f03518f, type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 4665292367290822, guid: 521123556861a4b5985e679b6ce6893e, type: 3}
+    - target: {fileID: 885242949625603918, guid: 59683d13862084714a12d3c75f03518f, type: 3}
+      propertyPath: goldSpawner
+      value: 
+      objectReference: {fileID: 4224606064843354347, guid: de19c53e2261a47fcadbfa68e921c6d9, type: 3}
     - target: {fileID: 885242949625603920, guid: 59683d13862084714a12d3c75f03518f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -910,57 +909,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59683d13862084714a12d3c75f03518f, type: 3}
---- !u!1 &1260491125
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1260491126}
-  - component: {fileID: 1260491127}
-  m_Layer: 5
-  m_Name: GoldCoinSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1260491126
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260491125}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 825913890}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.699999, y: 599.6}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1260491127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260491125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 960ddc14b2624055ab40aff7fd13ec6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinPrefab: {fileID: 4665292367290822, guid: 521123556861a4b5985e679b6ce6893e, type: 3}
-  elapsedTime: 0
-  waitTime: 0.5
 --- !u!224 &1358060518 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 885242949625603920, guid: 59683d13862084714a12d3c75f03518f, type: 3}
@@ -1082,7 +1030,7 @@ RectTransform:
   - {fileID: 1744029544}
   - {fileID: 2005852431}
   m_Father: {fileID: 825913890}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1119,6 +1067,14 @@ PrefabInstance:
       propertyPath: coinPrefab
       value: 
       objectReference: {fileID: 4665292367290822, guid: 521123556861a4b5985e679b6ce6893e, type: 3}
+    - target: {fileID: 885242949625603918, guid: 59683d13862084714a12d3c75f03518f, type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 4665292367290822, guid: 521123556861a4b5985e679b6ce6893e, type: 3}
+    - target: {fileID: 885242949625603918, guid: 59683d13862084714a12d3c75f03518f, type: 3}
+      propertyPath: goldSpawner
+      value: 
+      objectReference: {fileID: 4224606064843354347, guid: de19c53e2261a47fcadbfa68e921c6d9, type: 3}
     - target: {fileID: 885242949625603920, guid: 59683d13862084714a12d3c75f03518f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1302,7 +1258,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1795854766}
   - component: {fileID: 1795854765}
-  - component: {fileID: 1795854764}
   m_Layer: 0
   m_Name: FGCamera
   m_TagString: Untagged
@@ -1310,14 +1265,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1795854764
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1795854763}
-  m_Enabled: 1
 --- !u!20 &1795854765
 Camera:
   m_ObjectHideFlags: 0

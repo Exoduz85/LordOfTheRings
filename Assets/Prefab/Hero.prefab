@@ -54,8 +54,10 @@ MonoBehaviour:
   damage: 5
   health: 100
   maxHealth: 100
+  objectValue: 1
   floatingDamageText: {fileID: -5823235796868158255, guid: e6aef731542d54622a1b42aba507b66c, type: 3}
   healthBar: {fileID: 5061241440937332805}
+  coin: {fileID: 0}
 --- !u!114 &3541914645052499284
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -22,11 +22,6 @@ public class Hero : MonoBehaviour {
 }
 
 /*
-When enemy is killed, he grants the Hero 7 Gold
-
-The Hero can upgrade his Health and MaxHealth (together) by 10%
-for 50 Gold. Repeatable.
-
 The Hero can upgrade his Attack Damage by 10% for 50 Gold.
 Repeatable.
     make playerprefs for hero unit, save health, attack cooldown and upgrades.

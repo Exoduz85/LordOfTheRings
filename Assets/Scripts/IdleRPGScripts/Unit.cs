@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,8 +11,11 @@ public class Unit : MonoBehaviour {
     public int objectValue;
     public Text floatingDamageText;
     public HealthBarScript healthBar;
+    public GameObject goldSpawner;
+    
     float elapsedTime;
-
+    private int test = 0;
+    
     GameObject Target => GetComponent<Target>().value;
     bool HasTarget => GetComponent<Target>() != null && GetComponent<Target>().Exists;
     bool CanAttack => !this.IsChargingAttack && this.HasTarget;
@@ -46,12 +50,21 @@ public class Unit : MonoBehaviour {
     public void TakeDamage(float damage) {
         this.health -= damage;
         healthBar.SetHealth(health);
-        if (this.IsDead) {
+        if (this.IsDead)
+        {
+            InstantiateGoldSpawner();
             Destroy(this.gameObject);
         }
     }
     void InstantiateDamagePopUpText() {
         var damageTextInstance = Instantiate(floatingDamageText, this.Target.transform.position, Quaternion.identity);
         damageTextInstance.transform.SetParent(this.transform);
+    }
+
+    private void InstantiateGoldSpawner()
+    {
+        var goldSpawner = Instantiate(this.goldSpawner, this.Target.transform.position, Quaternion.identity);
+        goldSpawner.GetComponent<GoldSpawner>().objectValue = this.objectValue;
+        goldSpawner.transform.SetParent(FindObjectOfType<Hero>().transform);
     }
 }
