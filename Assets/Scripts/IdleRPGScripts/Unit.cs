@@ -63,7 +63,7 @@ public class Unit : MonoBehaviour {
 
     private void InstantiateGoldSpawner()
     {
-        var goldSpawner = Instantiate(this.goldSpawner, this.Target.transform.position, Quaternion.identity);
+        var goldSpawner = Instantiate(this.goldSpawner, this.transform.position, Quaternion.identity);
         goldSpawner.GetComponent<GoldSpawner>().objectValue = this.objectValue;
         goldSpawner.transform.SetParent(FindObjectOfType<Hero>().transform);
     }
