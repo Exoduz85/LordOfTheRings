@@ -12,7 +12,6 @@ public class Unit : MonoBehaviour {
     public Text floatingDamageText;
     public HealthBarScript healthBar;
     public GameObject goldSpawner;
-    
     float elapsedTime;
     private int test = 0;
     

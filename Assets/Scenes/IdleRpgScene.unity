@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &88341317
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1052,6 +1052,7 @@ MonoBehaviour:
   goldAmountText: {fileID: 2005852433}
   closetChest: {fileID: 1744029545}
   openChest: {fileID: 88341318}
+  amountOfGold: 0
 --- !u!1001 &1665976921
 PrefabInstance:
   m_ObjectHideFlags: 0

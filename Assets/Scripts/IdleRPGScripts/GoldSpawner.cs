@@ -9,10 +9,13 @@ public class GoldSpawner : MonoBehaviour{
     private void Start()
     {
         StartCoroutine(SpawnGold(objectValue));
+        FindObjectOfType<GoldScript>().setGold(objectValue);
     }
 
     IEnumerator SpawnGold(int numberOfCoinsToSpawn)
     {
+        FindObjectOfType<GoldScript>().closetChest.gameObject.SetActive(false);
+        FindObjectOfType<GoldScript>().openChest.gameObject.SetActive(true);
         for (int i = 0; i < numberOfCoinsToSpawn; i++)
         {
             yield return new WaitForSeconds(0.2f);
@@ -20,6 +23,8 @@ public class GoldSpawner : MonoBehaviour{
             coin.transform.SetParent(this.transform);
         }
         yield return new WaitForSeconds(1.5f);
+        FindObjectOfType<GoldScript>().openChest.gameObject.SetActive(false);
+        FindObjectOfType<GoldScript>().closetChest.gameObject.SetActive(true);
         Destroy(this.gameObject);
     }
 }
