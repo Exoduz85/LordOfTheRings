@@ -42,7 +42,7 @@ public class Unit : MonoBehaviour {
         var unit = this.Target.GetComponent<Unit>();
         unit.TakeDamage(this.damage);
         InstantiateDamagePopUpText();
-        Debug.Log($"{this} attacks {this.Target} for {this.damage} damage!", this);
+        //Debug.Log($"{this} attacks {this.Target} for {this.damage} damage!", this);
         this.elapsedTime -= this.attackTime;
     }
 
