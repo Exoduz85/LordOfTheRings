@@ -29,7 +29,7 @@ RectTransform:
   m_GameObject: {fileID: 97971084383599588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,10 +74,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTimer: 1
-  lifeTimerMax: 0.2
-  firstHalfMoveVector: {x: 50, y: 500, z: 0}
+  lifeTimerMax: 0.3
+  firstHalfMoveVector: {x: 50, y: 600, z: 0}
   secondHalfMoveVector: {x: -100, y: -600, z: 0}
-  movePosMultiplier: 3
+  movePosMultiplier: 2
   increaseScale: 2
   decreaseScale: -10
   t: 0
@@ -103,10 +103,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 45
     m_FontStyle: 3
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 0
     m_MaxSize: 90
     m_Alignment: 0
     m_AlignByGeometry: 0

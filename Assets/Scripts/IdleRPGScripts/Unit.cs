@@ -13,11 +13,11 @@ public class Unit : MonoBehaviour {
     public HealthBarScript healthBar;
     public GameObject goldSpawner;
     float elapsedTime;
-    private int test = 0;
+    public float t = 0;
     
-    GameObject Target => GetComponent<Target>().value;
+    public GameObject Target => GetComponent<Target>().value;
     bool HasTarget => GetComponent<Target>() != null && GetComponent<Target>().Exists;
-    bool CanAttack => !this.IsChargingAttack && this.HasTarget;
+    public bool CanAttack => !this.IsChargingAttack && this.HasTarget;
     bool IsChargingAttack => this.elapsedTime < this.attackTime;
     bool IsDead => this.health <= 0f;
 
@@ -65,5 +65,10 @@ public class Unit : MonoBehaviour {
         var goldSpawner = Instantiate(this.goldSpawner, this.transform.position, Quaternion.identity);
         goldSpawner.GetComponent<GoldSpawner>().objectValue = this.objectValue;
         goldSpawner.transform.SetParent(FindObjectOfType<Hero>().transform);
+    }
+
+    void MoveTowards(GameObject target)
+    {
+        this.transform.Translate(Vector3.Lerp(this.transform.position, target.transform.position, t));
     }
 }
