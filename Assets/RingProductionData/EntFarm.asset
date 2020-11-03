@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1688eccd5ec4ec29067ef732cf4249, type: 3}
   m_Name: EntFarm
   m_EditorClassIdentifier: 
-  name: Ent Farm
-  costKey: EntCost
-  productionAmount: 50
-  costs: 500
+  costs: 200
+  costMultiplier: 1.1
   productionTime: 5
+  productionAmount: 50

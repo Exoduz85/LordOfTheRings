@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1688eccd5ec4ec29067ef732cf4249, type: 3}
   m_Name: TheOneRing
   m_EditorClassIdentifier: 
-  name: The One Ring
-  costKey: OneRingCost
-  productionAmount: 1250
-  costs: 10000
+  costs: 800
+  costMultiplier: 1.1
   productionTime: 10
+  productionAmount: 1250

@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1688eccd5ec4ec29067ef732cf4249, type: 3}
   m_Name: HobbitFarm
   m_EditorClassIdentifier: 
-  name: Hobbit Farm
-  costKey: HobbitCost
-  productionAmount: 1
   costs: 25
+  costMultiplier: 1.1
   productionTime: 0.5
+  productionAmount: 1

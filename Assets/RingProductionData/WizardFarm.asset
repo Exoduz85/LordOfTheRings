@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1688eccd5ec4ec29067ef732cf4249, type: 3}
   m_Name: WizardFarm
   m_EditorClassIdentifier: 
-  name: Wizard Farm
-  costKey: WizardCost
-  productionAmount: 250
-  costs: 2500
+  costs: 400
+  costMultiplier: 1.1
   productionTime: 7.5
+  productionAmount: 250

@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1688eccd5ec4ec29067ef732cf4249, type: 3}
   m_Name: DwarfFarm
   m_EditorClassIdentifier: 
-  name: Dwarf Farm
-  costKey: DwarfCost
-  productionAmount: 2
   costs: 50
+  costMultiplier: 1.1
   productionTime: 1
+  productionAmount: 2

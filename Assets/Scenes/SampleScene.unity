@@ -259,8 +259,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -91}
-  m_SizeDelta: {x: 500, y: -181.95416}
+  m_AnchoredPosition: {x: 0, y: -34.1}
+  m_SizeDelta: {x: 1000, y: -68.200195}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &403762282
 MonoBehaviour:
@@ -281,8 +281,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1f7ea1578f6bf4d818235acb630c1e89, type: 2}
   - {fileID: 11400000, guid: 7719943dd7dc345e28795ad8fa73d826, type: 2}
   - {fileID: 11400000, guid: c4c101f5b71b24465807f671a83a23a6, type: 2}
-  ringProductionUnitParent: {fileID: 403762281}
-  ringProductionUnitPrefab: {fileID: 5178147295215487915, guid: e32e7f7a6daef435ebb569490f5e4956, type: 3}
+  ringProductionUnitPrefab: {fileID: 8861644890085395124, guid: e32e7f7a6daef435ebb569490f5e4956, type: 3}
 --- !u!114 &403762283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,10 +300,10 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 0
+  m_Spacing: 50
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
+  m_ChildControlWidth: 1
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
@@ -477,8 +476,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 250.01, y: -0.003479}
-  m_SizeDelta: {x: 1419.9794, y: 1080.0388}
+  m_AnchoredPosition: {x: 500, y: -34.1}
+  m_SizeDelta: {x: 1346.0011, y: 1397.7996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &663759108
 MonoBehaviour:
