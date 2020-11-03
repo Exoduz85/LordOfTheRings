@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Elven Farm
   costKey: ElvenCost
   productionAmount: 10
-  costs: 250
+  costs: 150
   productionTime: 2.75

@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953be764751ee45f1a3c2098fef28f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ringProductionUnit: {fileID: 0}
+  RingProductionData: {fileID: 0}
   ringAmountText: {fileID: 2588618808342315072}
   purchaseButtonLabel: {fileID: 8537437707722937105}
   floatingEarningsPrefab: {fileID: 3702528849947436567, guid: 071bd30917a614da696be4259f600ed5, type: 3}
@@ -364,8 +364,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8861644890085395124}
-        m_TargetAssemblyTypeName: RingProductionUnitScript, Assembly-CSharp
-        m_MethodName: BuyRingProductionUnit
+        m_TargetAssemblyTypeName: RingProducer, Assembly-CSharp
+        m_MethodName: Purchase
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Ent Farm
   costKey: EntCost
   productionAmount: 50
-  costs: 1337.5001
+  costs: 500
   productionTime: 5

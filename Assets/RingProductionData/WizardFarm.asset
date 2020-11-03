@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Wizard Farm
   costKey: WizardCost
   productionAmount: 250
-  costs: 6250
+  costs: 2500
   productionTime: 7.5

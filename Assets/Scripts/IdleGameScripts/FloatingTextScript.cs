@@ -1,36 +1,26 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class FloatingTextScript : MonoBehaviour
 {
-    public float lifeTimer = .5f;
-    public float lifeTimerMax = .5f;
-    public Vector3 moveVector;
+    public Vector3 moveDirection = Vector3.up * 20f;
+    public float variation = 5f;
+    public float alphaFadeSpeed = 5f;
 
-    private void Start()
-    {
-        moveVector = new Vector3(1, 2) * 240f;
+    void Start() {
+        this.variation = Random.Range(-this.variation, this.variation);
+        this.transform.position += new Vector3(Random.Range(-this.variation, this.variation), 0f, 0f);
+        this.moveDirection.x += this.variation;
     }
-
-    void Update()
-    {
-        float increaseScale = .75f;
-        float decreaseScale = -3f;
-        transform.position += moveVector * Time.deltaTime;
-        moveVector -= moveVector * (3f * Time.deltaTime);
-        if (lifeTimer > lifeTimerMax * .5f)
-        {
-            transform.localScale += Vector3.one * (increaseScale * Time.deltaTime);
+	
+    void Update() {
+        this.transform.position += this.moveDirection * Time.deltaTime;
+        var text = GetComponent<Text>();
+        var color = text.color;
+        color.a -= this.alphaFadeSpeed * Time.deltaTime;
+        text.color = color;
+        if (color.a <= 0f) {
+            Destroy(this.gameObject);
         }
-        else
-        {
-            moveVector = new Vector3(-3, 3) * 240f;
-            transform.localScale += Vector3.one * (decreaseScale * Time.deltaTime);
-        }
-        if (lifeTimer <= 0)
-        {
-            Destroy(gameObject);
-        }
-        lifeTimer -= Time.deltaTime;
     }
 }

@@ -3,13 +3,12 @@
 public class RingProductionSetup : MonoBehaviour {
 
     public RingProductionData[] ringProductionUnits;
-    public Transform ringProductionUnitParent;
-    public GameObject ringProductionUnitPrefab;
+    public RingProducer ringProductionUnitPrefab;
 
     void Start() {
         foreach (var productionUnit in this.ringProductionUnits) {
-            var instance = Instantiate(this.ringProductionUnitPrefab, this.ringProductionUnitParent);
-            instance.GetComponent<RingProducer>().SetUp(productionUnit);
+            var instance = Instantiate(this.ringProductionUnitPrefab, this.transform);
+            instance.SetUp(productionUnit);
         }
     }
 }

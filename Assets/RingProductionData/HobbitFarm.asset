@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Hobbit Farm
   costKey: HobbitCost
   productionAmount: 1
-  costs: 10
+  costs: 25
   productionTime: 0.5

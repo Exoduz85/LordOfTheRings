@@ -5,10 +5,11 @@ public class Ring : MonoBehaviour
 {
     public int ringAmountPerClick = 5;
     public Text ringAmountText;
+    const string ringPlayerPrefKey = "Rings";
     public int RingAmount {
-        get => PlayerPrefs.GetInt("Rings", 1);
+        get => PlayerPrefs.GetInt(ringPlayerPrefKey, 1);
         set {
-            PlayerPrefs.SetInt("Rings", value);
+            PlayerPrefs.SetInt(ringPlayerPrefKey, value);
             UpdateGoldAmountLabel();
         }
     }
@@ -21,6 +22,6 @@ public class Ring : MonoBehaviour
         UpdateGoldAmountLabel();
     }
     public void ProduceGold() {
-        this.RingAmount += this.ringAmountPerClick; // this.goldAmount = this.goldAmount + goldAmountPerClick;
+        this.RingAmount += this.ringAmountPerClick;
     }
 }
