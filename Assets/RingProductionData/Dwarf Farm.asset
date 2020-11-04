@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d1688eccd5ec4ec29067ef732cf4249, type: 3}
-  m_Name: TheOneRing
+  m_Name: Dwarf Farm
   m_EditorClassIdentifier: 
-  costs: 800
+  costs: 50
   costMultiplier: 1.1
-  productionTime: 10
-  productionAmount: 1250
+  productionTime: 1
+  productionAmount: 2

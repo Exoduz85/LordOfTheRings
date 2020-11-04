@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d1688eccd5ec4ec29067ef732cf4249, type: 3}
-  m_Name: WizardFarm
+  m_Name: The One Ring
   m_EditorClassIdentifier: 
-  costs: 400
+  costs: 800
   costMultiplier: 1.1
-  productionTime: 7.5
-  productionAmount: 250
+  productionTime: 10
+  productionAmount: 1250
