@@ -5,7 +5,7 @@ public class GoldProducer : MonoBehaviour {
     public GoldProductionData goldProductionData;
     public Text goldAmountText;
     public FloatingTextScript popupPrefab;
-    public Gold gold;
+    public Resource gold;
     public Purchasable amount;
     public Purchasable upgrade;
     float elapsedTime;
@@ -36,7 +36,7 @@ public class GoldProducer : MonoBehaviour {
     void ProduceGold() {
         if (this.amount.Amount == 0)
             return;
-        this.gold.GoldAmount += Mathf.RoundToInt(CalculateProductionAmount());
+        this.gold.ResourceAmount += Mathf.RoundToInt(CalculateProductionAmount());
         var instance = Instantiate(this.popupPrefab, this.transform);
         instance.GetComponent<Text>().text = $"+{CalculateProductionAmount()}";
     }
