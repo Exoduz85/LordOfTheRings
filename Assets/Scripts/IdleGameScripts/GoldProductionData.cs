@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [CreateAssetMenu]
-public class RingProductionData : ScriptableObject
+public class GoldProductionData : ScriptableObject
 {
     [SerializeField] int costs = 100;
     [SerializeField] float costMultiplier = 1.1f;

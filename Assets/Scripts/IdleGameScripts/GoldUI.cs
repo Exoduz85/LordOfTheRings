@@ -1,13 +1,13 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
 
-public class RingUI : MonoBehaviour
+public class GoldUI : MonoBehaviour
 {
     public Text goldAmountText;
-    public Ring ring;
+    public Gold gold;
 
     void UpdateGoldAmountLabel() {
-        this.goldAmountText.text = this.ring.RingAmount.ToString("0 Gold");
+        this.goldAmountText.text = this.gold.GoldAmount.ToString("0 Gold");
     }
     void Update() {
         UpdateGoldAmountLabel();

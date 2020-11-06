@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 8861644890085395124}
   - component: {fileID: -2396437873890321159}
   m_Layer: 5
-  m_Name: RingProductionUnit
+  m_Name: GoldProductionUnit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -214,8 +214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953be764751ee45f1a3c2098fef28f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RingProductionData: {fileID: 0}
-  ringAmountText: {fileID: 2588618808342315072}
+  GoldProductionData: {fileID: 0}
+  amountText: {fileID: 2588618808342315072}
   purchaseButtonLabel: {fileID: 8537437707722937105}
   upgradeButtonLabel: {fileID: 1043302358932990171}
   popupPrefab: {fileID: 2344913095995559691, guid: 071bd30917a614da696be4259f600ed5, type: 3}
@@ -237,7 +237,7 @@ MonoBehaviour:
     m_DisabledColor: {r: 0, g: 0, b: 0, a: 0}
     m_ColorMultiplier: 0
     m_FadeDuration: 0
-  ring: {fileID: 11400000, guid: 15f325e88f6414bb5930dde9e9b47104, type: 2}
+  gold: {fileID: 11400000, guid: 15f325e88f6414bb5930dde9e9b47104, type: 2}
 --- !u!114 &-2396437873890321159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +371,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -0.001709, y: 96.579}
+  m_AnchoredPosition: {x: -0.0017089844, y: 96.579}
   m_SizeDelta: {x: 0.0032958984, y: 53.420654}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &5180056799572289161
