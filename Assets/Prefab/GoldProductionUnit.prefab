@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7477684583140923195}
   - component: {fileID: 8388856570730907964}
   - component: {fileID: 3826729269926634024}
-  - component: {fileID: 3238942885310538287}
   m_Layer: 5
   m_Name: UpgradeButton
   m_TagString: Untagged
@@ -133,35 +132,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3238942885310538287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103036481371969382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8861644890085395124}
-          m_TargetAssemblyTypeName: RingProducer, Assembly-CSharp
-          m_MethodName: ChangeColorStateButton
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &5178147295215487915
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,30 +184,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953be764751ee45f1a3c2098fef28f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoldProductionData: {fileID: 0}
-  amountText: {fileID: 2588618808342315072}
-  purchaseButtonLabel: {fileID: 8537437707722937105}
-  upgradeButtonLabel: {fileID: 1043302358932990171}
+  goldProductionData: {fileID: 0}
+  goldAmountText: {fileID: 2588618808342315072}
   popupPrefab: {fileID: 2344913095995559691, guid: 071bd30917a614da696be4259f600ed5, type: 3}
-  button: {fileID: 5180056799706696165}
-  upgradeButton: {fileID: 3826729269926634024}
-  colors:
-    m_NormalColor: {r: 1, g: 1, b: 0, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 0, a: 1}
-    m_PressedColor: {r: 0.9960785, g: 1, b: 0, a: 1}
-    m_SelectedColor: {r: 0.9960785, g: 1, b: 0, a: 0.39607844}
-    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  upgradeColors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0}
-    m_PressedColor: {r: 0, g: 0, b: 0, a: 0}
-    m_SelectedColor: {r: 0, g: 0, b: 0, a: 0}
-    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0}
-    m_ColorMultiplier: 0
-    m_FadeDuration: 0
   gold: {fileID: 11400000, guid: 15f325e88f6414bb5930dde9e9b47104, type: 2}
+  amount:
+    buttonLabel: {fileID: 8537437707722937105}
+  upgrade:
+    buttonLabel: {fileID: 1043302358932990171}
 --- !u!114 &-2396437873890321159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,7 +382,6 @@ GameObject:
   - component: {fileID: 5180056799706696167}
   - component: {fileID: 5180056799706696164}
   - component: {fileID: 5180056799706696165}
-  - component: {fileID: 5180056799706696166}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -549,35 +502,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5180056799706696166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5180056799706696155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8861644890085395124}
-          m_TargetAssemblyTypeName: RingProductionUnitScript, Assembly-CSharp
-          m_MethodName: ChangeColorStateButton
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &5903441461917369548
 GameObject:
   m_ObjectHideFlags: 0

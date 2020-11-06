@@ -2,7 +2,6 @@
 using UnityEngine.UI;
 
 public class GoldProducer : MonoBehaviour {
-   
     public GoldProductionData goldProductionData;
     public Text goldAmountText;
     public FloatingTextScript popupPrefab;
