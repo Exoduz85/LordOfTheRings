@@ -13,8 +13,8 @@ namespace Clicker.ResourceProduction{
         public void SetUp(Data data) {
             this.Data = data;
             this.gameObject.name = data.name;
-            this.amount.SetUp(this.Data, data.costsResource, "factory");
-            this.upgrade.SetUp(this.Data, data.costsResource, "level");
+            this.amount.SetUp(this.Data, "factory");
+            this.upgrade.SetUp(this.Data, "level");
         }
         public void Purchase() => this.amount.Purchase();
         public void Upgrade() => this.upgrade.Purchase();
@@ -37,9 +37,9 @@ namespace Clicker.ResourceProduction{
         void Produce() {
             if (this.amount.Amount == 0)
                 return;
-            this.Data.productionResource.Amount += Mathf.RoundToInt(CalculateProductionAmount());
+            this.Data.produceResource.resourceType.Amount += Mathf.RoundToInt(CalculateProductionAmount());
             var instance = Instantiate(this.popupPrefab, this.transform);
-            instance.GetComponent<Text>().text = $"+{CalculateProductionAmount()} {this.Data.productionResource.name}";
+            instance.GetComponent<Text>().text = $"+{CalculateProductionAmount()} {this.Data.produceResource.resourceType.name}";
         }
         float CalculateProductionAmount() {
             return this.Data.GetProductionAmount(this.upgrade.Amount) * this.amount.Amount;

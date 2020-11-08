@@ -13,15 +13,15 @@ namespace Clicker{
         string productId;
         bool IsAffordable => this.resource.Amount >= this.data.GetActualCosts(this.Amount);
         public int Amount {
-            get => PlayerPrefs.GetInt(this.data.name+"_"+this.productId, 0);
-            private set => PlayerPrefs.SetInt(this.data.name+"_"+this.productId, value);
+            get => PlayerPrefs.GetInt(this.resource.name+"_"+this.productId, 0);
+            private set => PlayerPrefs.SetInt(this.resource.name+"_"+this.productId, value);
         }
 
-        public void SetUp(ResourceProduction.Data data, Resource resource, string productId) {
+        public void SetUp(ResourceProduction.Data data, string productId) {
             this.data = data;
-            this.resource = resource;
+            this.resource = data.costs.resourceType;
             this.productId = productId;
-            this.buttonLabel.text = $"Add {productId} for {data.GetActualCosts(this.Amount)} {resource.name}";
+            this.buttonLabel.text = $"Add {productId} for {data.GetActualCosts(this.Amount)} {this.resource.name}";
         }
 
         public void Purchase() {

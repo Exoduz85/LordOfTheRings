@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1688eccd5ec4ec29067ef732cf4249, type: 3}
   m_Name: Lumber mill
   m_EditorClassIdentifier: 
-  costs: 100
-  costsResource: {fileID: 11400000, guid: 5c0bd05d392e64bdea0cf06e6ca1b06b, type: 2}
+  costs:
+    amount: 10240
+    resourceType: {fileID: 11400000, guid: d9e474419ffc442a18a21373e37f3cf4, type: 2}
+  produceResource:
+    amount: 0
+    resourceType: {fileID: 0}
   costMultiplier: 1.1
   productionTime: 1
-  productionAmount: 1
-  productionResource: {fileID: 11400000, guid: d9e474419ffc442a18a21373e37f3cf4, type: 2}
   productionMultiplier: 1.05

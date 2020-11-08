@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1688eccd5ec4ec29067ef732cf4249, type: 3}
   m_Name: Gold mine
   m_EditorClassIdentifier: 
-  costs: 100
-  costsResource: {fileID: 11400000, guid: e1cc657ed91e34accb73ac9c81390adf, type: 2}
+  costs:
+    amount: 10
+    resourceType: {fileID: 11400000, guid: d9e474419ffc442a18a21373e37f3cf4, type: 2}
+  produceResource:
+    amount: 20
+    resourceType: {fileID: 11400000, guid: 15f325e88f6414bb5930dde9e9b47104, type: 2}
   costMultiplier: 1.1
   productionTime: 1
-  productionAmount: 1
-  productionResource: {fileID: 11400000, guid: 15f325e88f6414bb5930dde9e9b47104, type: 2}
   productionMultiplier: 1.05

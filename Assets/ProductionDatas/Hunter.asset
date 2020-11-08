@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1688eccd5ec4ec29067ef732cf4249, type: 3}
   m_Name: Hunter
   m_EditorClassIdentifier: 
-  costs: 100
-  costsResource: {fileID: 11400000, guid: 15f325e88f6414bb5930dde9e9b47104, type: 2}
+  costs:
+    amount: 50
+    resourceType: {fileID: 11400000, guid: 15f325e88f6414bb5930dde9e9b47104, type: 2}
+  produceResource:
+    amount: 0
+    resourceType: {fileID: 0}
   costMultiplier: 1.1
   productionTime: 1
-  productionAmount: 1
-  productionResource: {fileID: 11400000, guid: 78bbb7772448d4377a6346eda8c1eae8, type: 2}
   productionMultiplier: 1.05

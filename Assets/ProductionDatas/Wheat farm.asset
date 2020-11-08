@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1688eccd5ec4ec29067ef732cf4249, type: 3}
   m_Name: Wheat farm
   m_EditorClassIdentifier: 
-  costs: 0
+  costs: 100
   costsResource: {fileID: 11400000, guid: 8797c0c9061f84576b39adfebe256013, type: 2}
   costMultiplier: 1.1
   productionTime: 1
