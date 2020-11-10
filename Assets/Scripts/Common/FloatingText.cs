@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 
 namespace Common{
-    public class FloatingTextScript : MonoBehaviour
+    public class FloatingText : MonoBehaviour
     {
         public Vector3 moveDirection = Vector3.up * 20f;
         public float variation = 5f;
