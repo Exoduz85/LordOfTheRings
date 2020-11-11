@@ -2,16 +2,24 @@
 using UnityEngine.UI;
 
 namespace Resources{
-    public class ResourceUI : MonoBehaviour
-    {
+    public class ResourceUI : MonoBehaviour {
         public Text amountText;
+        public Text resourceNameText;
         public Resource resource;
 
-        void UpdateAmountLabel() {
-            this.amountText.text = this.resource.Amount.ToString($"0 {this.resource.name}");
-        }
         void Update() {
-            UpdateAmountLabel();
+            this.amountText.text = this.resource.Owned.ToString();
+            this.resourceNameText.text = this.resource.name;
+            this.amountText.color = this.resource.color;
+            this.resourceNameText.color = this.resource.color;
+        }
+
+        public void SetUp(Resource resource) {
+            this.resource = resource;
+        }
+
+        public void Produce() {
+            this.resource.Produce();
         }
     }
 }

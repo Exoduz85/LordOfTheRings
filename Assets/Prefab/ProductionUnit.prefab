@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data: {fileID: 0}
-  amountText: {fileID: 2588618808342315072}
+  titleText: {fileID: 2588618808342315072}
   popupPrefab: {fileID: 2344913095995559691, guid: 071bd30917a614da696be4259f600ed5, type: 3}
   amount:
     buttonLabel: {fileID: 8537437707722937105}
